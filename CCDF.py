@@ -1,3 +1,4 @@
+import os
 import warnings
 import numpy as np
 import matplotlib
@@ -23,19 +24,21 @@ def create_and_save_ccdf_plot(dataframes, labels, markers, output_filename):
     plt.legend()
     plt.grid(True)
 
+    if not os.path.exists('res'):
+        os.makedirs('res')
     plt.savefig(output_filename)
     plt.show()
 
 
 def main():
-    filter_list = ['csvs/Audio&FilesNonClean.csv', 'csvs/ImageNonClean.csv',
-                   'csvs/TextNonClean.csv', 'csvs/VideoNonClean.csv']
+    filter_list = ['csvs/Audio&FilesClean.csv', 'csvs/ImageClean.csv',
+                   'csvs/TextClean.csv', 'csvs/VideoClean.csv']
 
     dataframes = [pd.read_csv(file) for file in filter_list]
     labels = ['Text', 'Images', 'Files', 'Videos']
     markers = ['co', '*', 'rs', 'g^']
 
-    output_file_name = 'CCDF_results/CCDF_NonClean.png'
+    output_file_name = 'CCDF_results/CCDF_Clean.png'
     create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
 
 
