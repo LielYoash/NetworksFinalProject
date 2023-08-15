@@ -6,8 +6,8 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 matplotlib.use("TkAgg")
 
-filter_list = ['resources\\WITH_TCP_FILTER_TARGET1.csv', 'resources\\WITH_TCP_FILTER_TARGET2.csv',
-               'resources\\WITH_TCP_FILTER_TARGET3.csv', 'resources\\WITH_TCP_FILTER_TARGET4.csv']
+filter_list = ['csvs\\Audio&FilesClean.csv', 'csvs\\ImageClean.csv',
+               'csvs\\TextClean.csv', 'csvs\\VideoClean.csv']
 # TARGET1 = txt
 # TARGET2 = audio and files
 # TARGET3 = images
