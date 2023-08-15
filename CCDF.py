@@ -24,8 +24,8 @@ def create_and_save_ccdf_plot(dataframes, labels, markers, output_filename):
     plt.legend()
     plt.grid(True)
 
-    if not os.path.exists('res'):
-        os.makedirs('res')
+    if not os.path.exists('CCDF_results'):
+        os.makedirs('CCDF_results')
     plt.savefig(output_filename)
     plt.show()
 
