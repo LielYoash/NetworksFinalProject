@@ -1,39 +1,36 @@
-from scapy.all import rdpcap
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+from scapy.all import rdpcap
 
 
-# Define a function to explore message delay distribution
-def analyze_message_delays(file_path):
-    # Load packet data from the trace file
+def analyze_message_delays(file_path, output_filename):
     packets = rdpcap(file_path)
-
-    # Extract packet timestamps and compute message delays
     timestamps = [packet.time for packet in packets]
-    delays = np.array(np.diff(timestamps), dtype=float)  # Convert to float
+    delays = np.array(np.diff(timestamps), dtype=float)
 
-    # Create a histogram to understand message delay pattern
+    plt.figure(figsize=(10, 6))
     plt.hist(delays, bins=50, density=True, alpha=0.7, label="Message Delays")
 
-    # Estimate exponential distribution parameter
-    est_lambda = 1.0 / np.mean(delays)  # Estimate lambda
-
-    # Generate points for the fitted exponential distribution
+    est_lambda = 1.0 / np.mean(delays)
     x_vals = np.linspace(0, max(delays), 1000)
     y_vals = est_lambda * np.exp(-est_lambda * x_vals)
 
-    # Plot the fitted exponential distribution
     plt.plot(x_vals, y_vals, label="Fitted Distribution", color="red")
 
-    # Labels and title for the plot
-    plt.xlabel("Delay between Messages (Seconds)")
-    plt.ylabel("Probability Density")
+    plt.xlabel("Inter-Message Delay (Seconds)")
+    plt.ylabel("Probability Density Function")
     plt.title("Message Delay Distribution and Fitted PDF")
     plt.legend()
 
-    # Show the plot
+    plt.savefig(output_filename)  # Save the plot as a PNG file
     plt.show()
 
 
-# Analyze message delays using pcap file
-analyze_message_delays("pcaps/FileAudio.pcap")
+def main():
+    pcap_file = "pcaps/VideoOnly.pcap"
+    output_file_name = "PDF_results/VideoOnly.png"
+    analyze_message_delays(pcap_file, output_file_name)
+
+
+if __name__ == "__main__":
+    main()

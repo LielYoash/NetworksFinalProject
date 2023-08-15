@@ -23,7 +23,7 @@ def create_and_save_histogram(dataframe, output_filename):
 
 
 def main():
-    data_file = 'csvs/Audio&FilesNonClean.csv'
+    data_file = 'FileAudioTCP.csv'
     dataframe = pd.read_csv(data_file)
 
     output_file_name = f'res/{os.path.basename(data_file)[:-4]}.png'
