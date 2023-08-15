@@ -35,7 +35,7 @@ def main():
     labels = ['Text', 'Images', 'Files', 'Videos']
     markers = ['co', '*', 'rs', 'g^']
 
-    output_file_name = 'res/CCDF_NonClean.png'
+    output_file_name = 'CCDF_results/CCDF_NonClean.png'
     create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
 
 
