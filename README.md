@@ -74,13 +74,18 @@ In Order to examine Whatsapp Web's defences we recorded using Wireshark several 
 for each occurrence we extracted the data from Wireshark and used the code 
 we've created in order to analyze our findings as listed below.
 
+## conclusion
+In this modern world, where the majority of the people uses IM apps in one way or another, 
+trusting them with their out-most important information. These IM apps are far from perfect, 
+we have shown in these project how vulnerable IM apps to analysis attacks, and how it is possible to aquire
+private information whilst the victims are unaware of what happens.
 
-## License
+## References
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Authers
 
-For questions, feedback, or collaboration inquiries, reach out to [Your Name] at [your@email.com].
+For questions, feedback, or collaboration inquiries, reach out to Liel Yoash at [your@email.com].
 
 Thank you for your interest in the IM App Traffic Analysis Project!

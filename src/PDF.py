@@ -27,7 +27,7 @@ def analyze_message_delays(file_path, output_filename):
 
 
 def main():
-    pcap_files_list = ['../resources/Raw/TextOnly.pcap','../resources/Raw/IMGonly.pcap','../resources/Raw/VideoOnly.pcap','../resources/Raw/FileAudio.pcap']
+    pcap_files_list = ['../resources/Raw/TextOnly.pcap','../resources/Raw/IMGonly.pcap','../resources/Raw/VideoOnly.pcap','../resources/Raw/FileAudio.pcap','../resources/Raw/Mixed_.pcap']
     for pcap_file in pcap_files_list:
         output_file_name = f'../res/PDF_results/{os.path.basename(pcap_file)[:-4]}.png'
         analyze_message_delays(pcap_file, output_file_name)
