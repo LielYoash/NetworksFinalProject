@@ -20,7 +20,7 @@ might compromise user data.
 - Insights and Findings: Share insights and findings with the community through documentation and reports.
 
 ## Getting Started
-# Basic Instractions
+### Basic Instractions
 <ol class="getting-started-list">
     <li>Clone the repository:
         <pre><code class="language-sh">git clone https://github.com/LielYoash/NetworksFInalProject.git</code></pre>
@@ -57,10 +57,7 @@ might compromise user data.
         </ul>
     </li>
 </ol>
-## Contribution Guidelines
 
-We welcome contributions from the community to enhance the project's scope and impact. If you have insights, code
-improvements, or additional app data to share, please feel free to submit a pull request.
 
 ## License
 
