@@ -1,3 +1,4 @@
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 from scapy.all import rdpcap
@@ -23,13 +24,13 @@ def analyze_message_delays(file_path, output_filename):
     plt.legend()
 
     plt.savefig(output_filename)  # Save the plot as a PNG file
-    plt.show()
 
 
 def main():
-    pcap_file = "pcaps/VideoOnly.pcap"
-    output_file_name = "PDF_results/VideoOnly.png"
-    analyze_message_delays(pcap_file, output_file_name)
+    pcap_files_list = ['../resources/Raw/TextOnly.pcap','../resources/Raw/IMGonly.pcap','../resources/Raw/VideoOnly.pcap','../resources/Raw/FileAudio.pcap']
+    for pcap_file in pcap_files_list:
+        output_file_name = f'../res/PDF_results/{os.path.basename(pcap_file)[:-4]}.png'
+        analyze_message_delays(pcap_file, output_file_name)
 
 
 if __name__ == "__main__":
