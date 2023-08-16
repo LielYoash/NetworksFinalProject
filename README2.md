@@ -61,55 +61,123 @@ might compromise user data.
 
 ## Findings
 
-here are the results of our research
+**Data Capture**: We captured network packets from various WhatsApp groups, categorizing them into text messages, image messages, audio & file messages, and video messages.
 
-Firstly we used Wireshark to sniff the data from four different whatsapp groups seperatly.
-1. Text messages only
-2. Video messages
-3. Picture messages
-4. Files and voice messages
-
-we have put the following filter in wireshark tcp.dstport == 443 to display only the network packets that have a destination port of 443 and use the TCP protocol. Port 443 is commonly associated with the HTTPS protocol, which is used to secure web traffic.
-
+**Filtering Approach**: To enhance our analysis, we applied the "tcp.dstport == 443" filter in Wireshark, isolating packets associated with HTTPS traffic.
 Now we will show you how the data looked with the filters:
 
 
-1. this is the text messages with the filter
-![Image Alt Text](res/Time_Size_results/TextClean.png)
+### Text Messages
 
-2. this is the Image messages with the filter
-![Image Alt Text](res/Time_Size_results/ImageClean.png)
+- **Filtered Data:**
+  ![Text Messages - Filtered](res/Time_Size_results/TextClean.png)
+  
+- **Raw Data:**
+  ![Text Messages - Raw](res/Time_Size_results/TextRaw.png)
 
-3. this is the Audio&File messages with the filter
-![Image Alt Text](res/Time_Size_results/Audio&FilesClean.png)
+#### Observation:
+By applying the filter, the interference from network noise is significantly reduced, enabling clearer visualization of the text messages. Despite the presence of noise, the messages remain distinguishable and understandable in the graphs.
 
-4. this is the Video messages with the filter
-![Image Alt Text](res/Time_Size_results/VideoClean.png)
+### Image Messages
+
+- **Filtered Data:**
+  ![Image Messages - Filtered](res/Time_Size_results/ImageClean.png)
+  
+- **Raw Data:**
+  ![Image Messages - Raw](res/Time_Size_results/ImageRaw.png)
+
+#### Observation:
+The filter enhances the visualization of image messages, highlighting the shared visual content while minimizing network disturbances. Even in the presence of noise, the images remain discernible in the graphs.
+
+### Audio & File Messages
+
+- **Filtered Data:**
+  ![Audio & File Messages - Filtered](res/Time_Size_results/Audio&FilesClean.png)
+  
+- **Raw Data:**
+  ![Audio & File Messages - Raw](res/Time_Size_results/Audio&FilesRaw.png)
+
+#### Observation:
+Filtering out unwanted noise significantly improves the clarity of audio and file messages. Despite network interference, the distinct patterns of multimedia sharing are evident in the filtered graphs.
+
+### Video Messages
+
+- **Filtered Data:**
+  ![Video Messages - Filtered](res/Time_Size_results/VideoClean.png)
+  
+- **Raw Data:**
+  ![Video Messages - Raw](res/Time_Size_results/VideoRaw.png)
+
+#### Observation:
+The application of the filter enhances the visualization of video messages, making video sharing patterns more prominent. Despite network noise, the filtered graphs offer improved visibility.
+
+### Overall Observation
+
+While the raw data displays interference from network activity, the filtered data showcases the efficacy of the filtering process. Despite noise, the messages remain distinguishable in the graphs.
+
+---
+
+# Probability Density Function (PDF) Analysis
+
+After conducting an in-depth analysis of WhatsApp group data, we embarked on characterizing Inter-Message Delays (IMDs). This phase of the study aimed to uncover insights into the time intervals between messages or message batches sent within the communication channels.
+
+## Gaining Deeper Insight with Probability Density Function (PDF)
+
+In our quest for a profound comprehension of IMDs, we harnessed the power of the Probability Density Function (PDF). This mathematical tool allowed us to visualize the distribution of time intervals and their corresponding probabilities.
+
+## PDF Analysis for Different Message Groups
+
+### Text Only Group
+
+![PDF - Text Only Group](res/PDF_results/TextOnly..png)
+
+### Video Only Group
+
+![PDF - Video Only Group](res/PDF_results/VideoOnly..png)
+
+### Files and Audio Only Group
+
+![PDF - Files and Audio Only Group](res/PDF_results/FileAudio..png)
+
+### Image Only Group
+
+![PDF - Image Only Group](res/PDF_results/IMGonly..png)
+
+### Mixed Message Groups
+
+![PDF - Mixed Message Groups](res/PDF_results/Mixed_..png)
+
+---
+
+The Probability Density Function (PDF) analysis provides valuable insights into the temporal dynamics of message transmissions within different WhatsApp group types. Customize the paths to your PDF images to ensure accurate display in your repository.
 
 
 
-You can see the difference from the RAW data without the filteres
+# Complementary Cumulative Density Function (CCDF) Analysis
 
-1. this is the text messages without the filter
-![Image Alt Text](res/Time_Size_results/TextRaw.png)
+In addition to our Probability Density Function (PDF) analysis, we explored the Complementary Cumulative Density Function (CCDF) of normalized message sizes for different message types. This phase of the study aimed to reveal insights into the distribution of message sizes and their characteristics across various categories.
 
-2. this is the Image messages without the filter
-![Image Alt Text](res/Time_Size_results/ImageRaw.png)
+## Investigating Message Size Distributions with CCDF
 
-3. this is the Audio&File messages without the filter
-![Image Alt Text](res/Time_Size_results/Audio&FilesRaw.png)
+To gain a comprehensive understanding of message size distributions, we employed the Complementary Cumulative Density Function (CCDF). This mathematical approach allowed us to analyze the normalized message sizes by scaling them with respect to the maximum message size within each respective category.
 
-4. this is the Video messages without the filter
-![Image Alt Text](res/Time_Size_results/VideoRaw.png)
+### CCDF Analysis for Different Message Types
 
+#### Combination of Filtered Groups
 
+![CCDF - Filtered Groups](res/CCDF_results/CCDF_Clean.png)
 
+#### Combination of Raw Groups
 
+![CCDF - Raw Groups](res/CCDF_results/CDF_multiple.png)
 
+#### Combined Data from all groups at the same time
 
+![CCDF - Combined Data](res/CCDF_results/CDF_Raw.png)
 
+---
 
-
+The Complementary Cumulative Density Function (CCDF) analysis unveils the diversity in message size distributions among various message types. The provided images offer insights into the normalized message sizes within each category and their respective distributions. Ensure the image URLs are accurate to enable proper display in your repository.
 
 
 
