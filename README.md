@@ -1,4 +1,4 @@
-![Image Alt Text](res/Time_Size_results/your_image.png)
+![Image Alt Text](res/Time_Size_results/ImageClean.png)
 
 
 # IM App Traffic Analysis Project
