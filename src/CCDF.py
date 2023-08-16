@@ -31,15 +31,32 @@ def create_and_save_ccdf_plot(dataframes, labels, markers, output_filename):
 
 
 def main():
-    filter_list = ['csvs/Audio&FilesClean.csv', 'csvs/ImageClean.csv',
-                   'csvs/TextClean.csv', 'csvs/VideoClean.csv']
+    filtered_list = ['../resources/Clean/TextClean.csv', '../resources/Clean/ImageClean.csv',
+                   '../resources/Clean/VideoClean.csv', '../resources/Clean/Audio&FilesClean.csv']
 
-    dataframes = [pd.read_csv(file) for file in filter_list]
-    labels = ['Text', 'Images', 'Files', 'Videos']
-    markers = ['co', '*', 'rs', 'g^']
+    unfiltered_list = ['../resources/Raw/TextRaw.csv', '../resources/Raw/ImageRaw.csv',
+                   '../resources/Raw/VideoRaw.csv', '../resources/Raw/Audio&FilesRaw.csv']
 
-    output_file_name = 'CCDF_results/CCDF_Clean.png'
-    create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
+    while 1:
+        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2\n")
+        x =input()
+        if x == '1':
+            dataframes = [pd.read_csv(file) for file in filtered_list]
+            labels = ['Text', 'Images', 'Files', 'Videos']
+            markers = ['co', '*', 'rs', 'g^']
+            output_file_name = '../res/CCDF_results/CCDF_Clean.png'
+            create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
+            break
+        elif x == '2':
+            dataframes = [pd.read_csv(file) for file in unfiltered_list]
+            labels = ['Text', 'Images', 'Files', 'Videos']
+            markers = ['co', '*', 'rs', 'g^']
+            output_file_name = '../res/CCDF_results/CDF_Raw'
+            create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
+
+            break
+        else:
+            print("Wrong Input, Please Try Again.")
 
 
 if __name__ == "__main__":
