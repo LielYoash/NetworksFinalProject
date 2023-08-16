@@ -13,21 +13,34 @@ def create_and_save_histogram(dataframe, output_filename):
     plt.ylabel('Size (bytes)')
     plt.title('Bar Histogram: Time vs. Size')
 
-    plt.xticks(range(0, 91, 30))  # Adjust x-axis ticks to every 30 seconds
-    plt.yticks(range(0, 6001, 500))  # Adjust y-axis ticks to every 500 bytes
 
-    if not os.path.exists('res'):
-        os.makedirs('res')
+    if not os.path.exists('../res/Time_Size_results'):
+        os.makedirs('../res/Time_Size_results')
     plt.savefig(output_filename)
-    plt.show()
 
 
 def main():
-    data_file = 'FileAudioTCP.csv'
-    dataframe = pd.read_csv(data_file)
+    clean_data_files = ['../resources/Clean/TextClean.csv','../resources/Clean/ImageClean.csv','../resources/Clean/VideoClean.csv','../resources/Clean/Audio&FilesClean.csv']
+    raw_data_file = ['../resources/Raw/TextRaw.csv','../resources/Raw/ImageRaw.csv','../resources/Raw/VideoRaw.csv','../resources/Raw/Audio&FilesRaw.csv']
+    while 1:
+        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2\n")
+        x =input()
+        if x == '1':
+            for data_file in clean_data_files:
+                dataframe = pd.read_csv(data_file)
+                output_file_name = f'../res/Time_Size_results/{os.path.basename(data_file)[:-4]}.png'
+                create_and_save_histogram(dataframe, output_file_name)
+            break
+        elif x == '2':
+            for data_file in raw_data_file:
+                dataframe = pd.read_csv(data_file)
+                output_file_name = f'../res/Time_Size_results/{os.path.basename(data_file)[:-4]}.png'
+                create_and_save_histogram(dataframe, output_file_name)
+            break
+        else:
+            print("Wrong Input, Please Try Again.")
 
-    output_file_name = f'res/{os.path.basename(data_file)[:-4]}.png'
-    create_and_save_histogram(dataframe, output_file_name)
+
 
 
 if __name__ == "__main__":
