@@ -37,8 +37,10 @@ def main():
     unfiltered_list = ['../resources/Raw/TextRaw.csv', '../resources/Raw/ImageRaw.csv',
                    '../resources/Raw/VideoRaw.csv', '../resources/Raw/Audio&FilesRaw.csv']
 
+    multiple_groups = ['../resources/Clean/MultipleGroupsClean.csv','../resources/Raw/MultipleGroupsRaw.csv']
+
     while 1:
-        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2\n")
+        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2\nTo Analyze the Multiple Groups At Once press 3")
         x =input()
         if x == '1':
             dataframes = [pd.read_csv(file) for file in filtered_list]
@@ -53,7 +55,13 @@ def main():
             markers = ['co', '*', 'rs', 'g^']
             output_file_name = '../res/CCDF_results/CDF_Raw'
             create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
-
+            break
+        elif x == '3':
+            dataframes = [pd.read_csv(file) for file in multiple_groups]
+            labels = ['clean','raw']
+            markers = ['co', '*']
+            output_file_name = '../res/CCDF_results/CDF_multiple'
+            create_and_save_ccdf_plot(dataframes, labels, markers, output_file_name)
             break
         else:
             print("Wrong Input, Please Try Again.")
