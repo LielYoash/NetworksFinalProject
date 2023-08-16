@@ -59,9 +59,67 @@ might compromise user data.
 </ol>
 
 
+## Findings
+
+here are the results of our research
+
+Firstly we used Wireshark to sniff the data from four different whatsapp groups seperatly.
+1. Text messages only
+2. Video messages
+3. Picture messages
+4. Files and voice messages
+
+we have put the following filter in wireshark tcp.dstport == 443 to display only the network packets that have a destination port of 443 and use the TCP protocol. Port 443 is commonly associated with the HTTPS protocol, which is used to secure web traffic.
+
+Now we will show you how the data looked with the filters:
+
+
+1. this is the text messages with the filter
+![Image Alt Text](res/Time_Size_results/TextClean.png)
+
+2. this is the Image messages with the filter
+![Image Alt Text](res/Time_Size_results/ImageClean.png)
+
+3. this is the Audio&File messages with the filter
+![Image Alt Text](res/Time_Size_results/Audio&FilesClean.png)
+
+4. this is the Video messages with the filter
+![Image Alt Text](res/Time_Size_results/VideoClean.png)
+
+
+
+You can see the difference from the RAW data without the filteres
+
+1. this is the text messages without the filter
+![Image Alt Text](res/Time_Size_results/TextRaw.png)
+
+2. this is the Image messages without the filter
+![Image Alt Text](res/Time_Size_results/ImageRaw.png)
+
+3. this is the Audio&File messages without the filter
+![Image Alt Text](res/Time_Size_results/Audio&FilesRaw.png)
+
+4. this is the Video messages without the filter
+![Image Alt Text](res/Time_Size_results/VideoRaw.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+
+
 
 ## Contact
 
