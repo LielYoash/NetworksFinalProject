@@ -74,18 +74,155 @@ In Order to examine Whatsapp Web's defences we recorded using Wireshark several 
 for each occurrence we extracted the data from Wireshark and used the code 
 we've created in order to analyze our findings as listed below.
 
+**Data Capture**: We captured network packets from various WhatsApp groups, categorizing them into text messages, image messages, audio & file messages, and video messages.
+
+**Filtering Approach**: To enhance our analysis, we applied the "tcp.dstport == 443" filter in Wireshark, isolating packets associated with HTTPS traffic.
+Now we will show you how the data looked with the filters:
+
+
+### Text Messages
+
+- **Filtered Data:**
+  ![Text Messages - Filtered](res/Time_Size_results/TextClean.png)
+  
+- **Raw Data:**
+  ![Text Messages - Raw](res/Time_Size_results/TextRaw.png)
+
+#### Observation:
+By applying the filter, the interference from network noise is significantly reduced, enabling clearer visualization of the text messages. Despite the presence of noise, the messages remain distinguishable and understandable in the graphs.
+
+### Image Messages
+
+- **Filtered Data:**
+  ![Image Messages - Filtered](res/Time_Size_results/ImageClean.png)
+  
+- **Raw Data:**
+  ![Image Messages - Raw](res/Time_Size_results/ImageRaw.png)
+
+#### Observation:
+The filter enhances the visualization of image messages, highlighting the shared visual content while minimizing network disturbances. Even in the presence of noise, the images remain discernible in the graphs.
+
+### Audio & File Messages
+
+- **Filtered Data:**
+  ![Audio & File Messages - Filtered](res/Time_Size_results/Audio&FilesClean.png)
+  
+- **Raw Data:**
+  ![Audio & File Messages - Raw](res/Time_Size_results/Audio&FilesRaw.png)
+
+#### Observation:
+Filtering out unwanted noise significantly improves the clarity of audio and file messages. Despite network interference, the distinct patterns of multimedia sharing are evident in the filtered graphs.
+
+### Video Messages
+
+- **Filtered Data:**
+  ![Video Messages - Filtered](res/Time_Size_results/VideoClean.png)
+  
+- **Raw Data:**
+  ![Video Messages - Raw](res/Time_Size_results/VideoRaw.png)
+
+#### Observation:
+The application of the filter enhances the visualization of video messages, making video sharing patterns more prominent. Despite network noise, the filtered graphs offer improved visibility.
+
+### Overall Observation
+
+While the raw data displays interference from network activity, the filtered data showcases the efficacy of the filtering process. Despite noise, the messages remain distinguishable in the graphs.
+
+---
+
+# Probability Density Function (PDF) Analysis
+
+After conducting an in-depth analysis of WhatsApp group data, we embarked on characterizing Inter-Message Delays (IMDs). This phase of the study aimed to uncover insights into the time intervals between messages or message batches sent within the communication channels.
+
+## Gaining Deeper Insight with Probability Density Function (PDF)
+
+In our quest for a profound comprehension of IMDs, we harnessed the power of the Probability Density Function (PDF). This mathematical tool allowed us to visualize the distribution of time intervals and their corresponding probabilities.
+
+## PDF Analysis for Different Message Groups
+
+### Text Only Group
+
+![PDF - Text Only Group](res/PDF_results/TextOnly..png)
+
+### Video Only Group
+
+![PDF - Video Only Group](res/PDF_results/VideoOnly..png)
+
+### Files and Audio Only Group
+
+![PDF - Files and Audio Only Group](res/PDF_results/FileAudio..png)
+
+### Image Only Group
+
+![PDF - Image Only Group](res/PDF_results/IMGonly..png)
+
+### Mixed Message Groups
+
+![PDF - Mixed Message Groups](res/PDF_results/Mixed_..png)
+
+---
+
+The Probability Density Function (PDF) analysis provides valuable insights into the temporal dynamics of message transmissions within different WhatsApp group types. Customize the paths to your PDF images to ensure accurate display in your repository.
+
+
+
+# Complementary Cumulative Density Function (CCDF) Analysis
+
+In addition to our Probability Density Function (PDF) analysis, we explored the Complementary Cumulative Density Function (CCDF) of normalized message sizes for different message types. This phase of the study aimed to reveal insights into the distribution of message sizes and their characteristics across various categories.
+
+## Investigating Message Size Distributions with CCDF
+
+To gain a comprehensive understanding of message size distributions, we employed the Complementary Cumulative Density Function (CCDF). This mathematical approach allowed us to analyze the normalized message sizes by scaling them with respect to the maximum message size within each respective category.
+
+### CCDF Analysis for Different Message Types
+
+#### Combination of Filtered Groups
+
+![CCDF - Filtered Groups](res/CCDF_results/CCDF_Clean.png)
+
+#### Combination of Raw Groups
+
+![CCDF - Raw Groups](res/CCDF_results/CDF_multiple.png)
+
+#### Combined Data from all groups at the same time
+
+![CCDF - Combined Data](res/CCDF_results/CDF_Raw.png)
+
+---
+
+The Complementary Cumulative Density Function (CCDF) analysis unveils the diversity in message size distributions among various message types. The provided images offer insights into the normalized message sizes within each category and their respective distributions. Ensure the image URLs are accurate to enable proper display in your repository.
+
 ## conclusion
-In this modern world, where the majority of the people uses IM apps in one way or another, 
-trusting them with their out-most important information. These IM apps are far from perfect, 
-we have shown in these project how vulnerable IM apps to analysis attacks, and how it is possible to aquire
-private information whilst the victims are unaware of what happens.
+As we conclude this final project in the realm of Computer Networks, exploring the vulnerabilities and intricacies of secure messaging
+applications like WhatsApp and Telegram, several key takeaways emerge. This project has been a journey into the fascinating world of network security,
+privacy, and the ever-evolving landscape of digital communication.
+
+The study of attacks on secure messaging apps has illuminated the delicate balance between convenience and security that these platforms strive to achieve.
+While these apps promise end-to-end encryption and secure communication, we've discovered that vulnerabilities, particularly in the form of traffic analysis attacks,
+can still threaten users' privacy.
+
+Through theoretical analysis and practical experimentation, we've gained a deeper understanding of how adversaries can exploit traffic patterns to infer sensitive
+information about users and their interactions. We've navigated the intricacies of intercepting network traffic, identifying ground truth,
+and even explored techniques to mitigate the effectiveness of such attacks.
+
+As we reflect on this journey, we're reminded that technology is a double-edged sword. While instant messaging apps have revolutionized communication,
+they've also exposed us to new risks. This project has imparted valuable lessons in the ever-important balance between security and convenience,
+the dynamic nature of cybersecurity, and the responsibility we bear as technologists to develop robust solutions that safeguard user privacy.
+
+As we move forward, we carry with us the insights gained from this project. We're equipped to be proactive users, making informed choices about the platforms we use and
+advocating for security measures that protect our private conversations. This journey doesn't end here; it's a stepping stone towards a deeper understanding of
+the intricacies of computer networks and a commitment to enhancing the digital landscape for the benefit of all.
 
 ## References
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+- The paper: https://www.ndss-symposium.org/wp-content/uploads/2020/02/24347-paper.pdf
+
+- The researchers GitHub repo: https://github.com/SPIN-UMass/IMProxy
+
+- ChatGPT: https://chat.openai.com/
 
 ## Authers
 
-For questions, feedback, or collaboration inquiries, reach out to Liel Yoash at [your@email.com].
+- Liel Yoash - https://linkedin.com/in/liel-yoash
 
-Thank you for your interest in the IM App Traffic Analysis Project!
+- Maor Berenstein - https://www.linkedin.com/in/maor-berenstein-652996256/
