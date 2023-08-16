@@ -23,7 +23,7 @@ def main():
     clean_data_files = ['../resources/Clean/TextClean.csv','../resources/Clean/ImageClean.csv','../resources/Clean/VideoClean.csv','../resources/Clean/Audio&FilesClean.csv']
     raw_data_file = ['../resources/Raw/TextRaw.csv','../resources/Raw/ImageRaw.csv','../resources/Raw/VideoRaw.csv','../resources/Raw/Audio&FilesRaw.csv']
     while 1:
-        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2\n")
+        print("To Analyze the Filtered Files press 1\nTo Analyze the Unfiltered Files press 2")
         x =input()
         if x == '1':
             for data_file in clean_data_files:
