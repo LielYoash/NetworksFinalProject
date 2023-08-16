@@ -18,12 +18,12 @@ In this project, we analyze data collected from various IM apps to examine their
 
 <ol class="getting-started-list">
     <li>Clone the repository:
-        <pre><code class="language-sh">git clone https://github.com/yourusername/IM-Traffic-Analysis.git</code></pre>
+        <pre><code class="language-sh">git clone https://github.com/LielYoash/NetworksFInalProject.git</code></pre>
     </li>
     <li>Installation:
         <ul>
             <li><strong>Install Wireshark:</strong> Download and install Wireshark from <a href="https://www.wireshark.org/" target="_blank">wireshark.org</a>.</li>
-            <li><strong>Install Python Interpreter:</strong> If not already installed, get Python from <a href="https://www.python.org/" target="_blank">python.org</a>.</li>
+            <li><strong>Install Python Interpreter:</strong> If not already installed, get Python from <a href="https://www.python.org/" target="_blank">python.org</a>.</li> preferably Python version 10
         </ul>
     </li>
     <li>Data Collection:
