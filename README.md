@@ -1,6 +1,3 @@
-![Image Alt Text](res/Time_Size_results/ImageClean.png)
-
-
 # IM App Traffic Analysis Project
 
 Welcome to the IM App Traffic Analysis Project! This project aims to delve into the world of Instant Messaging (IM)
