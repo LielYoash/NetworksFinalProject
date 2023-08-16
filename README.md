@@ -62,7 +62,18 @@ might compromise user data.
     
 ### Research 
 After reading and understanding the thesis of the article, we chose to examine the countermeasures
-f
+for analysis attacks on Whatsapp Web.
+
+In Order to examine Whatsapp Web's defences we recorded using Wireshark several occurrences:
+1. Sending 3 text messages in a single group, whilst sniffing packets in the wireshark program.
+2. Sending 3 pictures in a single group, whilst sniffing packets in the wireshark program.
+3. Sending 3 videos in a single group, whilst sniffing packets in the wireshark program.
+4. Sending 3 audio files and 3 files in a single group, whilst sniffing packets in the wireshark program.
+5. sending all of the above at once, whilst sniffing packets in the wireshark program.
+
+for each occurrence we extracted the data from Wireshark and used the code 
+we've created in order to analyze our findings as listed below.
+
 
 ## License
 
